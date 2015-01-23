@@ -22,10 +22,10 @@ style=anime // custom style
 
 # Example:
 ```
-viewercount.php?channel=TwitchChannelName&size=100&color=hotpink&family=Tahoma&seconds=15
+viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15
 viewercount.php?channel=monstercat&style=anime&seconds=5
 ```
 # Live Example
 
-- [Example 1](http://www.intechnicolor.net/twitch/viewercount.php?channel=TwitchChannelName&size=100&color=hotpink&family=Tahoma&seconds=15)
+- [Example 1](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15)
 - [Example 2](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=anime&seconds=5)
