@@ -13,12 +13,15 @@ channel=YOURTWITCHCHANNELNAME
 size=100
 color=hotpink
 family=Tahoma
+seconds=10
+animegif=true
 ```
 Style it the way you like.
 
 # Example:
 ```
-viewercount.php?channel=YOURTWITCHCHANNELNAME&size=100&color=hotpink&family=Tahoma
+viewercount.php?channel=YOURTWITCHCHANNELNAME&size=100&color=hotpink&family=Tahoma&seconds=15
+viewercount.php?channel=YOURTWITCHCHANNELNAME&animegif=true
 ```
 # Live Example
 
