@@ -32,13 +32,7 @@
 					if (data["stream"] != null) {
 					if (data['streams']) {
 
-						<?php
-							if ($animegif == "true" || $animegif == "t" || $animegif == "y" || $animegif == "yes") {
-								echo "$('#viewer_counter').html('<img src="2.gif" />');";
-							} else {
-								echo "$('#viewer_counter').html("2");";
-							}
-						?>
+						$('#viewer_counter').html("Channel offline.");
 
 					} else {
 						var viewer_count = data['stream']['viewers'];
@@ -63,7 +57,7 @@
 						imgArray[8] = "8.gif";
 						imgArray[9] = "9.gif";
 
-						if (number1 == 0 && number2 > 1) {
+						if (number1 == 0 && (number6 + number5 + number4 + number3 + number2) > 1) {
 							number1img = '<img src="'+imgArray[0]+'" />';
 						} else if (number1 == 1) {
 							number1img = '<img src="'+imgArray[1]+'" />';
@@ -87,7 +81,7 @@
 							number1img = '';
 						};
 
-						if (number2 == 0 && number3 > 1) {
+						if (number2 == 0 && (number6 + number5 + number4 + number3) > 1) {
 							number2img = '<img src="'+imgArray[0]+'" />';
 						} else if (number2 == 1) {
 							number2img = '<img src="'+imgArray[1]+'" />';
@@ -111,7 +105,7 @@
 							number2img = '';
 						};
 
-						if (number3 == 0 && number4 > 1) {
+						if (number3 == 0 && (number6 + number5 + number4) > 1) {
 							number3img = '<img src="'+imgArray[0]+'" />';
 						} else if (number3 == 1) {
 							number3img = '<img src="'+imgArray[1]+'" />';
@@ -135,7 +129,7 @@
 							number3img = '';
 						};
 
-						if (number4 == 0 && number5 > 1) {
+						if (number4 == 0 && (number6 + number5) > 1) {
 							number4img = '<img src="'+imgArray[0]+'" />';
 						} else if (number4 == 1) {
 							number4img = '<img src="'+imgArray[1]+'" />';
@@ -215,13 +209,7 @@
 
 					}
 				} else {
-					<?php
-						if ($animegif == "true" || $animegif == "t" || $animegif == "y" || $animegif == "yes") {
-							echo "$('#viewer_counter').html('<img src="2.gif" />');";
-						} else {
-							echo "$('#viewer_counter').html("2");";
-						}
-					?>
+					$('#viewer_counter').html("Channel offline.");
 				}
 			});
 		}
