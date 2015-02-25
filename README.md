@@ -19,13 +19,16 @@ style=anime // custom style
 - Style it the way you like.
 - Selecting "anime" for the style overrides all other style settings.
 - If you do not specify, default values are Black font color, 90px font size, Tahoma font family, 10 second intervals, no style
+- .gif files go into the same directory as viewercount.php
 
 # Example:
 ```
 viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15
 viewercount.php?channel=monstercat&style=anime&seconds=5
+viewercount.php?channel=monstercat&style=touhou
 ```
 # Live Example
 
 - [Example 1](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15)
 - [Example 2](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=anime&seconds=5)
+- [Example 3](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=touhou)
