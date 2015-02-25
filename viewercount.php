@@ -21,17 +21,6 @@
 		<?php $channel = $_GET["channel"]; ?>
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">
-		imgArray = new Array();
-		imgArray[0] = "0.gif";
-		imgArray[1] = "1.gif";
-		imgArray[2] = "2.gif";
-		imgArray[3] = "3.gif";
-		imgArray[4] = "4.gif";
-		imgArray[5] = "5.gif";
-		imgArray[6] = "6.gif";
-		imgArray[7] = "7.gif";
-		imgArray[8] = "8.gif";
-		imgArray[9] = "9.gif";
 		// Get channel name from URL vars
 		var channelname = "<?php echo $channel; ?>";
 		// Viewer Counter
@@ -59,6 +48,36 @@
 							var number2 = ((number % 100) - ((number % 100) % 10)) / 10;
 							var number1 = ((number % 10) - ((number % 10) % 1)) / 1;
 							var number1img, number2img, number3img, number4img, number5img, number6img;
+
+							imgArray = new Array();
+
+							<?php
+								if ($style == "anime") {
+									echo "imgArray[0] = \"0.gif\";";
+									echo "imgArray[1] = \"1.gif\";";
+									echo "imgArray[2] = \"2.gif\";";
+									echo "imgArray[3] = \"3.gif\";";
+									echo "imgArray[4] = \"4.gif\";";
+									echo "imgArray[5] = \"5.gif\";";
+									echo "imgArray[6] = \"6.gif\";";
+									echo "imgArray[7] = \"7.gif\";";
+									echo "imgArray[8] = \"8.gif\";";
+									echo "imgArray[9] = \"9.gif\";";
+								} elseif ($style == "touhou") {
+									echo "imgArray[0] = \"touhou_0.gif\";";
+									echo "imgArray[1] = \"touhou_1.gif\";";
+									echo "imgArray[2] = \"touhou_2.gif\";";
+									echo "imgArray[3] = \"touhou_3.gif\";";
+									echo "imgArray[4] = \"touhou_4.gif\";";
+									echo "imgArray[5] = \"touhou_5.gif\";";
+									echo "imgArray[6] = \"touhou_6.gif\";";
+									echo "imgArray[7] = \"touhou_7.gif\";";
+									echo "imgArray[8] = \"touhou_8.gif\";";
+									echo "imgArray[9] = \"touhou_9.gif\";";
+								} else {
+									echo "";
+								}
+							?>
 
 							if (number1 == 0 && (number6 + number5 + number4 + number3 + number2) > 1) {
 								number1img = '<img src="'+imgArray[0]+'" />';
@@ -205,6 +224,8 @@
 							<?php
 								if ($style == "anime") {
 									echo "$('#viewer_counter').html(number6img + number5img + number4img + number3img + number2img + number1img);";
+								} elseif ($style == "touhou") {
+									echo "$('#viewer_counter').html(number6img + number5img + number4img + number3img + number2img + number1img);";
 								} else {
 									echo "$('#viewer_counter').html(viewer_count);";
 								}
@@ -215,6 +236,8 @@
 						<?php
 							if ($style == "anime") {
 								echo "$('#viewer_counter').html('<img src=\"2.gif\" />');";
+							} elseif ($style == "touhou") {
+								echo "$('#viewer_counter').html('<img src=\"touhou_2.gif\" />');";
 							} else {
 								echo "$('#viewer_counter').html(\"2\");";
 							}
