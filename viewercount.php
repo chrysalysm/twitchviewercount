@@ -33,13 +33,15 @@
 						if (data['streams']) {
 							<?php
 								if ($style == "anime") {
-									echo "$('#viewer_counter').html('<img src=\"2.gif\" />');";
+									echo "$('#viewer_counter').html('<img src=\"1.gif\" />');";
+								} elseif ($style == "touhou") {
+									echo "$('#viewer_counter').html('<img src=\"touhou_1.gif\" />');";
 								} else {
-									echo "$('#viewer_counter').html(\"2\");";
+									echo "$('#viewer_counter').html(\"1\");";
 								}
 							?>
 						} else {
-							var viewer_count = data['stream']['viewers'] + 2;
+							var viewer_count = data['stream']['viewers'];
 							var number = viewer_count;
 							var number6 = (number - (number % 100000)) / 100000;
 							var number5 = ((number % 100000) - ((number % 100000) % 10000)) / 10000;
@@ -79,7 +81,7 @@
 								}
 							?>
 
-							if (number1 == 0 && (number6 + number5 + number4 + number3 + number2) > 1) {
+							if (number1 == 0 && (number6 + number5 + number4 + number3 + number2) >= 1) {
 								number1img = '<img src="'+imgArray[0]+'" />';
 							} else if (number1 == 1) {
 								number1img = '<img src="'+imgArray[1]+'" />';
@@ -103,7 +105,7 @@
 								number1img = '';
 							};
 
-							if (number2 == 0 && (number6 + number5 + number4 + number3) > 1) {
+							if (number2 == 0 && (number6 + number5 + number4 + number3) >= 1) {
 								number2img = '<img src="'+imgArray[0]+'" />';
 							} else if (number2 == 1) {
 								number2img = '<img src="'+imgArray[1]+'" />';
@@ -127,7 +129,7 @@
 								number2img = '';
 							};
 
-							if (number3 == 0 && (number6 + number5 + number4) > 1) {
+							if (number3 == 0 && (number6 + number5 + number4) >= 1) {
 								number3img = '<img src="'+imgArray[0]+'" />';
 							} else if (number3 == 1) {
 								number3img = '<img src="'+imgArray[1]+'" />';
@@ -151,7 +153,7 @@
 								number3img = '';
 							};
 
-							if (number4 == 0 && (number6 + number5) > 1) {
+							if (number4 == 0 && (number6 + number5) >= 1) {
 								number4img = '<img src="'+imgArray[0]+'" />';
 							} else if (number4 == 1) {
 								number4img = '<img src="'+imgArray[1]+'" />';
@@ -235,11 +237,11 @@
 					} else {
 						<?php
 							if ($style == "anime") {
-								echo "$('#viewer_counter').html('<img src=\"2.gif\" />');";
+								echo "$('#viewer_counter').html('<img src=\"1.gif\" />');";
 							} elseif ($style == "touhou") {
-								echo "$('#viewer_counter').html('<img src=\"touhou_2.gif\" />');";
+								echo "$('#viewer_counter').html('<img src=\"touhou_1.gif\" />');";
 							} else {
-								echo "$('#viewer_counter').html(\"2\");";
+								echo "$('#viewer_counter').html(\"1\");";
 							}
 						?>
 					}
