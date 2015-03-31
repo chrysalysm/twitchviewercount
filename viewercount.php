@@ -81,7 +81,7 @@
 								}
 							?>
 
-							if (number1 == 0 && (number6 + number5 + number4 + number3 + number2) >= 1) {
+							if ((number1 == 0) || number1 == 0 && (number6 + number5 + number4 + number3 + number2) >= 1) {
 								number1img = '<img src="'+imgArray[0]+'" />';
 							} else if (number1 == 1) {
 								number1img = '<img src="'+imgArray[1]+'" />';
