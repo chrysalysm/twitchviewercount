@@ -9,6 +9,7 @@
 				$style = $_GET["style"]; if (!isset($style)) { $style = "none"; }
 				$style = strtolower($style); 
 			?>
+			<?php $debug = $_GET["debug"]; ?>
 			body {
 				font-size: <?php echo $size; ?>px;
 				font-family: <?php echo $family; ?>;
@@ -41,7 +42,13 @@
 								}
 							?>
 						} else {
-							var viewer_count = data['stream']['viewers'];
+							<?php 
+								if (!isset($debug)) {
+									echo "var viewer_count = data['stream']['viewers'];";
+								} else {
+									echo "var viewer_count = ".$debug.";";
+								}
+							?>
 							var number = viewer_count;
 							var number6 = (number - (number % 100000)) / 100000;
 							var number5 = ((number % 100000) - ((number % 100000) % 10000)) / 10000;
