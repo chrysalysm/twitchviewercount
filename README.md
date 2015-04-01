@@ -15,6 +15,7 @@ color=hotpink // font color
 family=Tahoma // font family
 seconds=10 // interval update in seconds
 style=anime // custom style
+debug=123456 // custom debug values for test (Max is 999999)
 ```
 - Style it the way you like.
 - Selecting "anime" for the style overrides all other style settings.
@@ -26,9 +27,11 @@ style=anime // custom style
 viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15
 viewercount.php?channel=monstercat&style=anime&seconds=5
 viewercount.php?channel=monstercat&style=touhou
+viewercount.php?channel=monstercat&style=anime&debug=123123
 ```
 # Live Example
 
 - [Example 1](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&size=100&color=hotpink&family=Tahoma&seconds=15)
 - [Example 2](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=anime&seconds=5)
 - [Example 3](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=touhou)
+- [Example 4](http://www.intechnicolor.net/twitch/viewercount.php?channel=monstercat&style=anime&debug=123123)
