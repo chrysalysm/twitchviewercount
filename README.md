@@ -21,6 +21,7 @@ debug=123456 // custom debug values for test (Max is 999999)
 - Selecting "anime" for the style overrides all other style settings.
 - If you do not specify, default values are Black font color, 90px font size, Tahoma font family, 10 second intervals, no style
 - .gif files go into the same directory as viewercount.php
+- Debug will only work when the Twitch API returns a non-null value for 'stream' data.  Basically, the stream must be live and broadcasting.
 
 # Example:
 ```
