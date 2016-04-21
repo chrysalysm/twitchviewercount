@@ -16,6 +16,9 @@
 				color: <?php echo $color; ?>;
 				letter-spacing: -2px;
 		  	}
+			img {
+				margin-left: -5px;
+			}
 		</style>
 	</head>
 	<body>
