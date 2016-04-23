@@ -17,7 +17,8 @@
 				letter-spacing: -2px;
 		  	}
 			img {
-				margin-left: -5px;
+				margin-right: -7px;
+				padding-left: 0px;
 			}
 		</style>
 	</head>
@@ -37,11 +38,11 @@
 						if (data['streams']) {
 							<?php
 								if ($style == "anime") {
-									echo "$('#viewer_counter').html('<img src=\"1.gif\" />');";
+									echo "$('#viewer_counter').html('<img src=\"0.gif\" />');";
 								} elseif ($style == "touhou") {
-									echo "$('#viewer_counter').html('<img src=\"touhou_1.gif\" />');";
+									echo "$('#viewer_counter').html('<img src=\"touhou_0.gif\" />');";
 								} else {
-									echo "$('#viewer_counter').html(\"1\");";
+									echo "$('#viewer_counter').html(\"0\");";
 								}
 							?>
 						} else {
@@ -62,30 +63,15 @@
 							var number1img, number2img, number3img, number4img, number5img, number6img;
 
 							imgArray = new Array();
-
 							<?php
 								if ($style == "anime") {
-									echo "imgArray[0] = \"0.gif\";";
-									echo "imgArray[1] = \"1.gif\";";
-									echo "imgArray[2] = \"2.gif\";";
-									echo "imgArray[3] = \"3.gif\";";
-									echo "imgArray[4] = \"4.gif\";";
-									echo "imgArray[5] = \"5.gif\";";
-									echo "imgArray[6] = \"6.gif\";";
-									echo "imgArray[7] = \"7.gif\";";
-									echo "imgArray[8] = \"8.gif\";";
-									echo "imgArray[9] = \"9.gif\";";
+									for ($x = 0; $x <= 9; $x++) {
+									echo "imgArray[$x] = \"$x.gif\";\n\t\t\t\t\t\t\t";
+									}
 								} elseif ($style == "touhou") {
-									echo "imgArray[0] = \"touhou_0.gif\";";
-									echo "imgArray[1] = \"touhou_1.gif\";";
-									echo "imgArray[2] = \"touhou_2.gif\";";
-									echo "imgArray[3] = \"touhou_3.gif\";";
-									echo "imgArray[4] = \"touhou_4.gif\";";
-									echo "imgArray[5] = \"touhou_5.gif\";";
-									echo "imgArray[6] = \"touhou_6.gif\";";
-									echo "imgArray[7] = \"touhou_7.gif\";";
-									echo "imgArray[8] = \"touhou_8.gif\";";
-									echo "imgArray[9] = \"touhou_9.gif\";";
+									for ($x = 0; $x <= 9; $x++) {
+										echo "imgArray[$x] = \"touhou_$x.gif\";\n\t\t\t\t\t\t\t";	
+									}
 								} else {
 									echo "";
 								}
@@ -93,144 +79,51 @@
 
 							if ((number1 == 0) || number1 == 0 && (number6 + number5 + number4 + number3 + number2) >= 1) {
 								number1img = '<img src="'+imgArray[0]+'" />';
-							} else if (number1 == 1) {
-								number1img = '<img src="'+imgArray[1]+'" />';
-							} else if (number1 == 2) {
-								number1img = '<img src="'+imgArray[2]+'" />';
-							} else if (number1 == 3) {
-								number1img = '<img src="'+imgArray[3]+'" />';
-							} else if (number1 == 4) {
-								number1img = '<img src="'+imgArray[4]+'" />';
-							} else if (number1 == 5) {
-								number1img = '<img src="'+imgArray[5]+'" />';
-							} else if (number1 == 6) {
-								number1img = '<img src="'+imgArray[6]+'" />';
-							} else if (number1 == 7) {
-								number1img = '<img src="'+imgArray[7]+'" />';
-							} else if (number1 == 8) {
-								number1img = '<img src="'+imgArray[8]+'" />';
-							} else if (number1 == 9) {
-								number1img = '<img src="'+imgArray[9]+'" />';
+							} else if (number1 > 0) {
+								number1img = '<img src="'+imgArray[number1]+'" />';
 							} else {
 								number1img = '';
-							};
+							}
 
 							if (number2 == 0 && (number6 + number5 + number4 + number3) >= 1) {
 								number2img = '<img src="'+imgArray[0]+'" />';
-							} else if (number2 == 1) {
-								number2img = '<img src="'+imgArray[1]+'" />';
-							} else if (number2 == 2) {
-								number2img = '<img src="'+imgArray[2]+'" />';
-							} else if (number2 == 3) {
-								number2img = '<img src="'+imgArray[3]+'" />';
-							} else if (number2 == 4) {
-								number2img = '<img src="'+imgArray[4]+'" />';
-							} else if (number2 == 5) {
-								number2img = '<img src="'+imgArray[5]+'" />';
-							} else if (number2 == 6) {
-								number2img = '<img src="'+imgArray[6]+'" />';
-							} else if (number2 == 7) {
-								number2img = '<img src="'+imgArray[7]+'" />';
-							} else if (number2 == 8) {
-								number2img = '<img src="'+imgArray[8]+'" />';
-							} else if (number2 == 9) {
-								number2img = '<img src="'+imgArray[9]+'" />';
+							} else if (number2 > 0) {
+								number2img = '<img src="'+imgArray[number2]+'" />';
 							} else {
 								number2img = '';
-							};
+							}
 
 							if (number3 == 0 && (number6 + number5 + number4) >= 1) {
 								number3img = '<img src="'+imgArray[0]+'" />';
-							} else if (number3 == 1) {
-								number3img = '<img src="'+imgArray[1]+'" />';
-							} else if (number3 == 2) {
-								number3img = '<img src="'+imgArray[2]+'" />';
-							} else if (number3 == 3) {
-								number3img = '<img src="'+imgArray[3]+'" />';
-							} else if (number3 == 4) {
-								number3img = '<img src="'+imgArray[4]+'" />';
-							} else if (number3 == 5) {
-								number3img = '<img src="'+imgArray[5]+'" />';
-							} else if (number3 == 6) {
-								number3img = '<img src="'+imgArray[6]+'" />';
-							} else if (number3 == 7) {
-								number3img = '<img src="'+imgArray[7]+'" />';
-							} else if (number3 == 8) {
-								number3img = '<img src="'+imgArray[8]+'" />';
-							} else if (number3 == 9) {
-								number3img = '<img src="'+imgArray[9]+'" />';
+							} else if (number3 > 0) {
+								number3img = '<img src="'+imgArray[number3]+'" />';
 							} else {
 								number3img = '';
-							};
+							}
 
 							if (number4 == 0 && (number6 + number5) >= 1) {
 								number4img = '<img src="'+imgArray[0]+'" />';
-							} else if (number4 == 1) {
-								number4img = '<img src="'+imgArray[1]+'" />';
-							} else if (number4 == 2) {
-								number4img = '<img src="'+imgArray[2]+'" />';
-							} else if (number4 == 3) {
-								number4img = '<img src="'+imgArray[3]+'" />';
-							} else if (number4 == 4) {
-								number4img = '<img src="'+imgArray[4]+'" />';
-							} else if (number4 == 5) {
-								number4img = '<img src="'+imgArray[5]+'" />';
-							} else if (number4 == 6) {
-								number4img = '<img src="'+imgArray[6]+'" />';
-							} else if (number4 == 7) {
-								number4img = '<img src="'+imgArray[7]+'" />';
-							} else if (number4 == 8) {
-								number4img = '<img src="'+imgArray[8]+'" />';
-							} else if (number4 == 9) {
-								number4img = '<img src="'+imgArray[9]+'" />';
+							} else if (number4 > 0) {
+								number4img = '<img src="'+imgArray[number4]+'" />';
 							} else {
 								number4img = '';
-							};
+							}
+
 
 							if (number5 == 0 && number6 > 1) {
 								number5img = '<img src="'+imgArray[0]+'" />';
-							} else if (number5 == 1) {
-								number5img = '<img src="'+imgArray[1]+'" />';
-							} else if (number5 == 2) {
-								number5img = '<img src="'+imgArray[2]+'" />';
-							} else if (number5 == 3) {
-								number5img = '<img src="'+imgArray[3]+'" />';
-							} else if (number5 == 4) {
-								number5img = '<img src="'+imgArray[4]+'" />';
-							} else if (number5 == 5) {
-								number5img = '<img src="'+imgArray[5]+'" />';
-							} else if (number5 == 6) {
-								number5img = '<img src="'+imgArray[6]+'" />';
-							} else if (number5 == 7) {
-								number5img = '<img src="'+imgArray[7]+'" />';
-							} else if (number5 == 8) {
-								number5img = '<img src="'+imgArray[8]+'" />';
-							} else if (number5 == 9) {
-								number5img = '<img src="'+imgArray[9]+'" />';
+							} else if (number5 > 0) {
+								number5img = '<img src="'+imgArray[number5]+'" />';
 							} else {
 								number5img = '';
 							};
 
 							if (number6 == 0) {
 								number6img = '';
-							} else if (number6 == 1) {
-								number6img = '<img src="'+imgArray[1]+'" />';
-							} else if (number6 == 2) {
-								number6img = '<img src="'+imgArray[2]+'" />';
-							} else if (number6 == 3) {
-								number6img = '<img src="'+imgArray[3]+'" />';
-							} else if (number6 == 4) {
-								number6img = '<img src="'+imgArray[4]+'" />';
-							} else if (number6 == 5) {
-								number6img = '<img src="'+imgArray[5]+'" />';
-							} else if (number6 == 6) {
-								number6img = '<img src="'+imgArray[6]+'" />';
-							} else if (number6 == 7) {
-								number6img = '<img src="'+imgArray[7]+'" />';
-							} else if (number6 == 8) {
-								number6img = '<img src="'+imgArray[8]+'" />';
+							} else if (number6 > 0) {
+								number6img = '<img src="'+imgArray[number6]+'" />';
 							} else {
-								number6img = '<img src="'+imgArray[9]+'" />';
+								number6img = '';
 							};
 
 							<?php
@@ -242,16 +135,15 @@
 									echo "$('#viewer_counter').html(viewer_count);";
 								}
 							?>
-
 						}
 					} else {
 						<?php
 							if ($style == "anime") {
-								echo "$('#viewer_counter').html('<img src=\"1.gif\" />');";
+								echo "$('#viewer_counter').html('<img src=\"0.gif\" />');";
 							} elseif ($style == "touhou") {
-								echo "$('#viewer_counter').html('<img src=\"touhou_1.gif\" />');";
+								echo "$('#viewer_counter').html('<img src=\"touhou_0.gif\" />');";
 							} else {
-								echo "$('#viewer_counter').html(\"1\");";
+								echo "$('#viewer_counter').html(\"0\");";
 							}
 						?>
 					}
